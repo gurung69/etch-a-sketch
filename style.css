@@ -1,10 +1,13 @@
 .container{
+    display: flex;
     display: grid;
-    grid-template-columns: repeat(16, 40px);
-    grid-auto-rows: 40px;
+    grid-auto-rows: auto;
+    width: 650px;
+    height: 650px;
 }
 .grid-div{
     border: 1px solid black;
+    flex: 1;
 }
 .hover{
     background-color: black;
