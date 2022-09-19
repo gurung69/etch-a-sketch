@@ -43,10 +43,17 @@ function changeDivColor(){//change grid-div color when mousedown and hovered
 }
 changeDivColor();
 
-const btn = document.querySelector('.btn');
-btn.addEventListener('click', ()=>{//changes grid based on the user input
-    gridSize = prompt('grid size');
+const input = document.querySelector('#grid-layout');
+input.addEventListener('change', ()=>{//changes grid based on the user input
+    gridSize = input.value;
+    document.querySelector('label span').textContent = `${gridSize}X${gridSize}`;
     container.innerHTML = '';
     createGrid(gridSize);
     changeDivColor();
+})
+
+const erase = document.querySelector('.erase');
+erase.addEventListener('click',()=>{
+    const divs = document.querySelectorAll('.grid-div');
+    divs.forEach(div => div.classList.remove('hover'));
 })
